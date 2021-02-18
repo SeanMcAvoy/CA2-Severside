@@ -1,6 +1,17 @@
 /*Here is the fonts styles Start*/
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Ubuntu:ital,wght@0,400;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 
-h1 {
+$testing: 'Dancing Script', cursive;
+$bodyFont: 'Ubuntu', sans-serif;
+$titleFont: 'Big Shoulders Inline Display', cursive;
+
+h1,h2,h3,h4,h5{
+    font-family: $titleFont;
+    color: #333;
+}
+h1 
+{
     font-size: 150%;
     margin: 0;
     padding: .5em 0 .25em;
@@ -10,6 +21,6 @@ h2 {
     margin: 0;
     padding: .25em 0 .5em;
 }
-h1, h2 {
-    color: #333;
+table{
+    font-family: $bodyFont;
 }

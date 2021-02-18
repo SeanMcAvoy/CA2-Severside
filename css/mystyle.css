@@ -1,5 +1,42 @@
 /*Here is the variables styles Start*/
+/*Start of the buttons code*/
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&family=Ubuntu:ital,wght@0,400;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap");
+a.button1 {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+  font-family: 'Roboto',sans-serif;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-align: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+a.button1:hover {
+  color: #000000;
+  background-color: #FFFFFF;
+}
+
+@media all and (max-width: 30em) {
+  a.button1 {
+    display: block;
+    margin: 0.4em auto;
+  }
+}
+
 /*Here is the fonts styles Start*/
+h1, h2, h3, h4, h5 {
+  font-family: "Big Shoulders Inline Display", cursive;
+  color: #333;
+}
+
 h1 {
   font-size: 150%;
   margin: 0;
@@ -12,8 +49,8 @@ h2 {
   padding: .25em 0 .5em;
 }
 
-h1, h2 {
-  color: #333;
+table {
+  font-family: "Ubuntu", sans-serif;
 }
 
 /*Here is the header styles Start*/
