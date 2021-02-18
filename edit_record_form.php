@@ -34,7 +34,9 @@ include('includes/header.php');
             <br>
             
             <label>Size:</label>
-            <input type="input" name="size">
+            <input type="input" name="size"
+                   value="<?php echo $records['size']; ?>">
+
             <br>
 
             <label>List Price:</label>
