@@ -3,11 +3,14 @@ require_once('database.php');
 
 // Get category ID
 if (!isset($category_id)) {
-$category_id = filter_input(INPUT_GET, 'category_id', 
-FILTER_VALIDATE_INT);
-if ($category_id == NULL || $category_id == FALSE) {
-$category_id = 1;
-}
+    $category_id = filter_input(
+        INPUT_GET,
+        'category_id',
+        FILTER_VALIDATE_INT
+    );
+    if ($category_id == NULL || $category_id == FALSE) {
+        $category_id = 1;
+    }
 }
 
 // Get name for current category
@@ -39,69 +42,66 @@ $products = $statement3->fetchAll();
 $statement3->closeCursor();
 ?>
 <div class="container">
-<?php
-include('includes/header.php');
-?>
-<h1>Product List</h1>
+    <?php
+    include('includes/header.php');
+    ?>
+    <h1>Product List</h1>
 
-<aside>
-<!-- display a list of categories -->
-<h2>Categories</h2>
-<nav>
-<ul>
-<?php foreach ($categories as $category) : ?>
-<li><a href=".?category_id=<?php echo $category['categoryID']; ?>">
-<?php echo $category['categoryName']; ?>
-</a>
-</li>
-<?php endforeach; ?>
-</ul>
-</nav>          
-</aside>
+    <aside>
+        <!-- display a list of categories -->
+        <h2>Categories</h2>
+        <nav>
+            <ul>
+                <?php foreach ($categories as $category) : ?>
+                    <li><a class="button1" href=".?category_id=<?php echo $category['categoryID']; ?>">
+                            <?php echo $category['categoryName']; ?>
+                        </a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+        </nav>
+    </aside>
 
-<section>
-<!-- display a table of products -->
-<h2><?php echo $category_name; ?></h2>
-<table>
-<tr>
-<th>Image</th>
-<th>Name</th>
-<th>Size</th>
-<th>Price</th>
-<th>Delete</th>
-<th>Edit</th>
-</tr>
-<?php foreach ($products as $product) : ?>
-<tr>
-<td><img src="image_uploads/<?php echo $product['image']; ?>" width="100px" height="100px" /></td>
-<td><?php echo $product['name']; ?></td>
-<td><?php echo $product['size']?></td>
-<td><?php echo $product['price']; ?></td>
+    <section>
+        <!-- display a table of products -->
+        <h2><?php echo $category_name; ?></h2>
+        <table>
+            <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Price</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+            <?php foreach ($products as $product) : ?>
+                <tr>
+                    <td><img src="image_uploads/<?php echo $product['image']; ?>" width="100px" height="100px" /></td>
+                    <td><?php echo $product['name']; ?></td>
+                    <td><?php echo $product['size'] ?></td>
+                    <td><?php echo $product['price']; ?></td>
 
-<td><form action="delete_product.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="product_id"
-value="<?php echo $product['productID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $product['categoryID']; ?>">
-<input type="submit" value="Delete">
+                    <td>
+                        <form action="delete_product.php" method="post" id="delete_record_form">
+                            <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
+                            <input type="hidden" name="category_id" value="<?php echo $product['categoryID']; ?>">
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
 
-</form></td>
-<td>
-<form action="edit_product_form.php" method="post"
-id="delete_record_form">
-<input type="hidden" name="product_id"
-value="<?php echo $product['productID']; ?>">
-<input type="hidden" name="category_id"
-value="<?php echo $product['categoryID']; ?>">
-<input type="submit" value="Edit">
-</form></td>
-</tr>
-<?php endforeach; ?>
-</table>
-<p><a href="add_product_form.php">Add product</a></p>
-<p><a href="category_list.php">Manage Categories</a></p>
-</section>
-<?php
-include('includes/footer.php');
-?>
+                    <td>
+                        <form action="edit_product_form.php" method="post" id="delete_record_form">
+                            <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
+                            <input type="hidden" name="category_id" value="<?php echo $product['categoryID']; ?>">
+                            <input type="submit" value="Edit">
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </table>
+        <p><a class="button1" href="add_product_form.php">Add product</a></p>
+        <p><a class="button1" href="category_list.php">Manage Categories</a></p>
+    </section>
+    <?php
+    include('includes/footer.php');
+    ?>

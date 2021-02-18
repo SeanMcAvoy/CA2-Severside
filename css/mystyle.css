@@ -5,23 +5,24 @@
 a.button1 {
   display: inline-block;
   padding: 0.35em 1.2em;
-  border: 0.1em solid #FFFFFF;
+  border: 0.1em solid black;
   margin: 0 0.3em 0.3em 0;
-  border-radius: 0.12em;
+  border-radius: 0.15em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-decoration: none;
   font-family: 'Roboto',sans-serif;
   font-weight: 300;
-  color: #FFFFFF;
+  color: black;
+  background-color: #c2c2c2;
   text-align: center;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
 }
 
 a.button1:hover {
-  color: #000000;
-  background-color: #FFFFFF;
+  color: white;
+  background-color: #32A6CD;
 }
 
 @media all and (max-width: 30em) {
@@ -34,7 +35,7 @@ a.button1:hover {
 /*Here is the fonts styles Start*/
 h1, h2, h3, h4, h5 {
   font-family: "Big Shoulders Inline Display", cursive;
-  color: #333;
+  color: #32A6CD;
 }
 
 h1 {
@@ -62,7 +63,6 @@ header {
 header h1 {
   margin: 0;
   padding: .5em 0;
-  color: black;
 }
 
 nav ul {

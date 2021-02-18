@@ -8,7 +8,7 @@ $titleFont: 'Big Shoulders Inline Display', cursive;
 
 h1,h2,h3,h4,h5{
     font-family: $titleFont;
-    color: #333;
+    color: $primaryColour;
 }
 h1 
 {
