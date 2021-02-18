@@ -78,7 +78,7 @@ include('includes/header.php');
 <td><?php echo $product['size']?></td>
 <td><?php echo $product['price']; ?></td>
 
-<td><form action="delete_record.php" method="post"
+<td><form action="delete_product.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="product_id"
 value="<?php echo $product['productID']; ?>">
@@ -99,7 +99,7 @@ value="<?php echo $product['categoryID']; ?>">
 </tr>
 <?php endforeach; ?>
 </table>
-<p><a href="add_record_form.php">Add product</a></p>
+<p><a href="add_product_form.php">Add product</a></p>
 <p><a href="category_list.php">Manage Categories</a></p>
 </section>
 <?php
