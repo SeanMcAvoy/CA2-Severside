@@ -1,17 +1,17 @@
 <?php
 
-// Get the record data
-$record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
+// Get the product data
+$product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 $name = filter_input(INPUT_POST, 'name');
 $size = filter_input(INPUT_POST,'size');
 $price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
 
 // Validate inputs
-if ($record_id == NULL || $record_id == FALSE || $category_id == NULL ||
+if ($product_id == NULL || $product_id == FALSE || $category_id == NULL ||
 $category_id == FALSE || empty($name) || $size == null ||
 $price == NULL || $price == FALSE) {
-$error = "Invalid record data. Check all fields and try again.";
+$error = "Invalid product data. Check all fields and try again.";
 include('error.php');
 } else {
 
@@ -46,23 +46,23 @@ $image = $original_image; // old image from database
 
 /************************** End Image upload **************************/
 
-// If valid, update the record in the database
+// If valid, update the product in the database
 require_once('database.php');
 
-$query = 'UPDATE records
+$query = 'UPDATE products
 SET categoryID = :category_id,
 name = :name,
 size = :size,
 price = :price,
 image = :image
-WHERE recordID = :record_id';
+WHERE productID = :product_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
 $statement->bindValue(':name', $name);
 $statement->bindValue(':size', $size);
 $statement->bindValue(':price', $price);
 $statement->bindValue(':image', $image);
-$statement->bindValue(':record_id', $record_id);
+$statement->bindValue(':product_id', $product_id);
 $statement->execute();
 $statement->closeCursor();
 
