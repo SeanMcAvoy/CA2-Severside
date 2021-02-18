@@ -30,6 +30,10 @@ include('includes/header.php');
             <input type="input" name="name">
             <br>
 
+            <label>Size:</label>
+            <input type="input" name="size">
+            <br>
+
             <label>List Price:</label>
             <input type="input" name="price">
             <br>        
