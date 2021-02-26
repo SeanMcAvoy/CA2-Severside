@@ -30,7 +30,7 @@ include('includes/header.php');
 
             <label>Name:</label>
             <input type="input" name="name"
-                   value="<?php echo $products['name']; ?>">
+                   value="<?php echo $products['name']; ?>"required>
             <br>
             
             <label>Size:</label>
@@ -41,7 +41,7 @@ include('includes/header.php');
 
             <label>List Price:</label>
             <input type="input" name="price"
-                   value="<?php echo $products['price']; ?>">
+                   value="<?php echo $products['price']; ?>"required>
             <br>
 
             <label>Image:</label>
