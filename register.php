@@ -1,7 +1,7 @@
 <?php
 //help from https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
-//Databasefile
-require_once "database.php";
+// Include config file
+require_once "config.php";
 
 // Define variables and initialize with empty values
 $username = $password = $confirm_password = "";
@@ -90,6 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // Close connection
     mysqli_close($link);
 }
+include('includes/header.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -131,3 +132,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     </div>    
 </body>
 </html>
+<?php
+include('includes/footer.php');
+?>
