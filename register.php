@@ -90,7 +90,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     // Close connection
     mysqli_close($link);
 }
-include('includes/header.php');
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +115,7 @@ include('includes/header.php');
             </div>   
              <!--Password-->
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>"placeholder="Password">>
+                <input type="password" name="password" class="form-control" value="<?php echo $password; ?>"placeholder="Password">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <!-- Confirm Password -->
