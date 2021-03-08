@@ -6,5 +6,7 @@
 </head>
 <!-- the body section -->
 <body>
-<header><h1>Jersey Direct</h1></header>
+<header><h1>Jersey Direct</h1>
+
+</header>
 

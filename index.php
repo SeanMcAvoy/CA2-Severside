@@ -59,8 +59,8 @@ $statement3->closeCursor();
     ?>
     <h2>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to Jersey Direct.</h2>
     <p>
-        <a href="reset-password.php" class="btn btn-warning">Reset Your Password</a>
-        <a href="logout.php" class="btn btn-danger">Sign Out of Your Account</a>
+        <!-- <a class="button1" href="reset-password.php" class="btn btn-warning">Reset Your Password</a>-->
+        <a class="button1" href="logout.php" class="btn btn-danger">Sign Out</a>
     </p>
     <h1>Product List</h1>
 
