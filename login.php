@@ -75,7 +75,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     }
                 } else{
                     // Display an error message if username doesn't exist
-                    $username_err = "No account found with that username.";
+                    $username_err = "No account with that username.";
                 }
             } else{
                 echo "Please try again.";
@@ -91,6 +91,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 ?>
+
 <div class="container">
     <?php
     include('includes/header.php');
@@ -99,12 +100,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-            <div <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
-                <input placeholder="Username" type="text" name="username" value="<?php echo $username; ?>">
+            <div <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>>
+                <br>
+                <input  placeholder="Username" type="text" name="username" value="<?php echo $username; ?>">
+                <br>
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>    
-            <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <input placeholder="Password" type="password" name="password">
+            <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>>
+                <input  placeholder="Password" type="password" name="password">
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div>

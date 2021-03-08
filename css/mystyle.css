@@ -90,34 +90,49 @@ body {
   font-size: 2em;
 }
 
-#loginForm mark {
-  color: #000;
-  background: #ff0;
-}
-
 #loginForm input[type=text] {
-  width: 50%;
+  width: 30%;
   padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
+  margin: 10px 0;
+  margin: 10px auto;
   border: 1px solid #ccc;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 
-#loginForm #loginButton input[type=submit] {
-  width: 1%;
+#loginForm input[type=password] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+#loginForm input[type=submit] {
   background-color: #4CAF50;
   color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
+  padding: 10px 18px;
+  margin: 10px 0;
   border: none;
   border-radius: 4px;
+  -webkit-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
   cursor: pointer;
 }
 
-#loginForm #loginButton input[type=submit]:hover {
+#loginForm input[type=submit]:hover {
   background-color: #45a049;
 }
 
