@@ -1,5 +1,6 @@
-# students-php-crud
-A starter project for DkIT students on the Server-Side module.
+# Jersey Direct
+This is a interface for user at Jersey Direct sports Jersey store. Which allows each employee to login and see what stock there is, what sizes and prices.
+They can also update and edit the stock as needed.
 ### Instructions
 * Create a MySQL database called php-crud in PHP MyAdmin
 * Run the code in the sql-db.txt file in PHP MyAdmin
