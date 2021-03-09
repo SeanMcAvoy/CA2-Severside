@@ -41,6 +41,20 @@ body
     }
     
    
+    input[type=reset]
+    {
+        background-color: #db0e0e;
+        color: white;
+        padding: 10px 18px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 4px;
+        box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+        cursor: pointer;
+        &:hover {
+            background-color: #ec0a0a;
+        }
+    }
     input[type=submit]{
         background-color: #4CAF50;
         color: white;

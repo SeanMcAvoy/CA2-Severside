@@ -120,6 +120,22 @@ body {
   text-align: center;
 }
 
+#loginForm input[type=reset] {
+  background-color: #db0e0e;
+  color: white;
+  padding: 10px 18px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+}
+
+#loginForm input[type=reset]:hover {
+  background-color: #ec0a0a;
+}
+
 #loginForm input[type=submit] {
   background-color: #4CAF50;
   color: white;
