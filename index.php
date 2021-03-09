@@ -3,9 +3,15 @@
 session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
-if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true)
+{
     header("location: login.php");
     exit;
+}
+//will only print admin account if you are admin!
+if(isset($_SESSION["username"]) == "mcavoy1129")
+{
+    $adminButton = "<a id=adminButton class=button1 href=admin.php >Admin Menu</a>";
 }
 
 require_once('database.php');
@@ -59,8 +65,9 @@ $statement3->closeCursor();
     ?>
     <h2>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to Jersey Direct.</h2>
     <p>
-        <!-- <a class="button1" href="reset-password.php" class="btn btn-warning">Reset Your Password</a>-->
-        <a class="button1" href="logout.php" class="btn btn-danger">Sign Out</a>
+        
+        <a class="button1" href="account_Menu.php" >Account Menu</a>
+        <?php echo $adminButton;?>
     </p>
     <h1>Product List</h1>
 
