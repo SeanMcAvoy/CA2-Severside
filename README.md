@@ -7,5 +7,5 @@ A starter project for DkIT students on the Server-Side module.
 * Configure the database.php file to connect to your SQL database
 * Admin Login = mcavoy1129
 * Admin Password = Admin123
-*You can also register and have your own account but wont be able to access the admin page without the admin Useraccount!
+* You can also register and have your own account but wont be able to access the admin page without the admin Useraccount!
 
