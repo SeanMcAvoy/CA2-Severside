@@ -1,8 +1,10 @@
+-- --------------------------------------------------------
 
 --
 -- Table structure for table `categories`
 --
 
+DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories` (
   `categoryID` int(11) NOT NULL,
   `categoryName` varchar(255) NOT NULL
@@ -13,56 +15,108 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`categoryID`, `categoryName`) VALUES
-(1, 'Category 1'),
-(2, 'Category 2'),
-(3, 'Category 3');
+(1, 'NBA'),
+(2, 'NFL'),
+(4, 'Football');
+
+-- --------------------------------------------------------
 
 --
--- Table structure for table `records`
+-- Table structure for table `products`
 --
 
-CREATE TABLE `records` (
-  `recordID` int(11) NOT NULL,
+DROP TABLE IF EXISTS `products`;
+CREATE TABLE `products` (
+  `productID` int(11) NOT NULL,
   `categoryID` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
+  `size` varchar(20) NOT NULL,
   `price` decimal(10,2) NOT NULL,
   `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `records`
+-- Dumping data for table `products`
 --
 
-INSERT INTO `records` (`recordID`, `categoryID`, `name`, `price`, `image`) VALUES
-(1, 1, 'Some text', '12.00', '644471.jpg'),
-(2, 1, 'Some text', '15.00', '233012.jpg'),
-(3, 1, 'Some text', '18.00', '329484.jpg'),
-(4, 1, 'Some text', '10.00', '644055.jpg'),
-(5, 2, 'Some text', '16.00', '373465.jpg'),
-(6, 2, 'Some text', '19.00', '373989.jpg'),
-(7, 2, 'Some text', '12.00', '374104.jpg'),
-(8, 2, 'Some text', '10.00', '4733.jpg'),
-(9, 2, 'Some text', '15.00', '834551.jpg'),
-(10, 3, 'Some text', '13.00', '908783.jpg'),
-(11, 3, 'Some text', '17.00', '835545.jpg'),
-(12, 3, 'Some text', '19.00', '119273.jpg');
+INSERT INTO `products` (`productID`, `categoryID`, `name`, `size`, `price`, `image`) VALUES
+(10, 3, 'Some text', '', '13.00', '908783.jpg'),
+(11, 3, 'Some text', '', '17.00', '835545.jpg'),
+(13, 1, 'Rodman Bulls Jersey', 'Small', '35.00', '338172.jpg'),
+(14, 1, 'Jordan Bulls Jersey', 'Medium ', '35.00', '521651.jpeg'),
+(15, 1, 'Carter Raptors Jersey', 'Large', '30.00', '171118.jpeg'),
+(16, 2, 'Gronk Jesery Bucs', 'Large', '40.00', '861420.jpeg'),
+(17, 2, 'Brady Bucs Jersey', 'Medium ', '35.00', '230496.jpeg'),
+(18, 2, 'Rodgers Greenbay Jersey', 'Extra Larage', '40.00', '453417.jpg'),
+(19, 4, 'Ireland Retro', 'Small', '35.00', '523842.png'),
+(20, 4, 'Man United Jersey', 'Large', '30.00', '101399.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `created_at` datetime DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `password`, `created_at`) VALUES
+(1, 'mcavoy1129', '$2y$10$u1OPl0B1famY4DyTTTZfI.vnkUweC8YdTkc8TWE0gyNtlLLnyRFpS', '2021-03-04 11:17:48'),
+(2, 'James-Johnson', '$2y$10$WujGz0tadHyt46J.q6VsrOE/xR3ExH05rzFTRmjfKcH9L3njBD./G', '2021-03-10 20:22:21'),
+(3, 'Emma', '$2y$10$aGLlOHVlTuXs/jXc/p7TneGcqOzmQ4WEbkBncWiBBswwDOPgMBOa.', '2021-03-10 21:13:29'),
+(5, 'test123', '$2y$10$.ZoQMmUPF9mOyqi3dGhpGePbxC/VJKbqAYmjzYkn9NFS3i4uO9StG', '2021-03-10 22:41:29'),
+(6, 'd00233349', '$2y$10$.VZSu5qtiNtDEe7ENzEkbupR6ycQF9Cw4DGQcQFTdHM69UwJxxxj.', '2021-03-10 22:42:15');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `records`
+-- Indexes for table `categories`
 --
-ALTER TABLE `records`
-  ADD PRIMARY KEY (`recordID`);
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`categoryID`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`productID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT for table `records`
+-- AUTO_INCREMENT for table `categories`
 --
-ALTER TABLE `records`
-  MODIFY `recordID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+ALTER TABLE `categories`
+  MODIFY `categoryID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `productID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
