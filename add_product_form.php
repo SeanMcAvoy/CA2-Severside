@@ -25,7 +25,7 @@ include('includes/header.php');
                     <?php echo $category['categoryName']; ?>
                 </option>
             <?php endforeach; ?>
-            </select>
+            </select><span id="category_err"></span>
             <br>
             <label>Name:</label>
             <input type="input" name="name" placeholder="Full Product Name" required>

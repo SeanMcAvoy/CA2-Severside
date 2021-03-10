@@ -108,19 +108,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </div>   
              <!--Password-->
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
-                <input type="password" name="password" value="<?php echo $password; ?>"placeholder="Password">
+                <input id="passid" type="password" name="password" value="<?php echo $password; ?>"placeholder="Password" onBlur="passwd_validation();"><span id="passwd_err"></span>
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <!-- Confirm Password -->
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
-                <input type="password" name="confirm_password" value="<?php echo $confirm_password; ?>"placeholder="Confirm Password">
+                <input id="confPassid" type="password" name="confirm_password" value="<?php echo $confirm_password; ?>"placeholder="Confirm Password" onBlur="confPasswd_validation();"><span id="confPasswd_err"></span>
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Submit">
-                <input type="reset"  value="Reset">
+                <!-- <input type="reset"  value="Reset"> -->
             </div>
-            <p>Already have an account? <a class="button1" href="login.php">Login</a>.</p>
+            <p>Already have an account? <a class="button1" href="login.php">Login</a></p>
         </form>
     </div>  
 </div>  
