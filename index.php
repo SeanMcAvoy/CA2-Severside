@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 //will only print admin account if you are admin!
-if (isset($_SESSION["username"]) == "mcavoy1129") {
+if (($_SESSION["username"]) == "mcavoy1129") {
     $adminButton = "<a id=adminButton class=button1 href=admin.php >Admin Menu</a>";
 }
 

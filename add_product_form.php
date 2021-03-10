@@ -18,7 +18,8 @@ include('includes/header.php');
               id="add_record_form">
 
             <label>Category:</label>
-            <select name="category_id">
+            <select id="category" name="category_id" onBlur="category_validation();">
+            <option selected="" value="Default">Please select a Category</option>
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>">
                     <?php echo $category['categoryName']; ?>
@@ -31,7 +32,7 @@ include('includes/header.php');
             <br>
 
             <label>Size:</label>
-            <input type="input" name="size">
+            <input type="input" name="size" required>
             <br>
 
             <label>List Price:</label>
@@ -46,7 +47,7 @@ include('includes/header.php');
             <input type="submit" value="Add product">
             <br>
         </form>
-        <p><a href="index.php">View Homepage</a></p>
+        <p><a class="button1" href="index.php">View Homepage</a></p>
     <?php
 include('includes/footer.php');
 ?>

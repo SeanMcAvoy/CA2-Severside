@@ -103,6 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <!-- UserName -->
             <div class="form-group <?php echo (!empty($username_err)) ? 'has-error' : ''; ?>">
                 <input type="text" name="username" value="<?php echo $username; ?>" placeholder="Username">
+                <br>
                 <span class="help-block"><?php echo $username_err; ?></span>
             </div>   
              <!--Password-->

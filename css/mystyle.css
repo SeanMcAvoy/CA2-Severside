@@ -294,6 +294,15 @@ br {
   width: 15em;
 }
 
+#deleteUserButton {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  top: 25%;
+  left: 25%;
+}
+
 /*Here is the sidebar styles Start*/
 aside {
   float: left;
