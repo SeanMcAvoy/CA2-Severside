@@ -8,6 +8,7 @@ They can also update and edit the stock as needed. While the admin account has t
 3. Move the PHP files in to your htdocs folder so Apache can process the PHP code
 4. Configure the database.php file to connect to your SQL database
 5. Configure the config.php file also to connect to your SQL Database
+
 ### Logging In to the System
 * Run the code index.php file
 * Use the credentials below for admin privileges
@@ -15,11 +16,14 @@ They can also update and edit the stock as needed. While the admin account has t
 * Admin Password = Admin123
 * You can also register and have your own account but wont be able to access the admin page without the admin Useraccount!
 
-### Additional Information
-* This was a very fun and enjoyable assignment. It was my frist them every using php which I found is a lanuage I would be intrested in learning more about. 
+### Live site
 * My Website interface can be seen here live from a server: 
 https://mysql04.comp.dkit.ie/D00233349/CRUD
-* Feel free to login and play about with it and message me with any improvement ideas, bugs discover or general question about the project.
+
+### Additional Information
+This was a very fun and enjoyable assignment. It was my frist them every using php which I found is a lanuage I would be intrested in learning more about. 
+Feel free to login and play about with it and message me with any improvement ideas, bugs discover or general question about the project.
+*Any bugs or questions can be made to me here: D00233349@student.dkit.ie.
 
 
 
