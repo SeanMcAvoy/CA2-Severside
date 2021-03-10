@@ -7,7 +7,7 @@ a.button1 {
 	border-radius: 0.15em;
 	box-sizing: border-box;
 	text-decoration: none;
-	font-family: 'Roboto',sans-serif;
+	font-family: $buttonFont;
 	font-weight: 300;
 	color: black;
     background-color: $richwhite;
@@ -18,7 +18,62 @@ a.button1 {
 		background-color: $primaryColour;
 	}
 }
-@media all and (max-width:30em) {
+//dropdown button
+.dropdown {
+	float: right;
+	overflow: hidden;
+	.dropbtn 
+	{
+		display: inline-block;
+		padding: 0.35em 1.2em;
+		border: 0.1em solid black;
+		margin: 0 0.3em 0.3em 0;
+		border-radius: 0.15em;
+		box-sizing: border-box;
+		text-decoration: none;
+		font-family: $buttonFont;
+		font-weight: 300;
+		color: black;
+    	background-color: $richwhite;
+		text-align: center;
+		transition: all 0.2s;
+	}
+	&:hover 
+	{
+		.dropbtn 
+		{
+			color: white;
+			background-color: $primaryColour;
+		}
+		.dropdown-content 
+		{
+			display: block;
+		}
+	}
+	.dropdown-content 
+	{
+		display: none;
+		position: absolute;
+		background-color: #f9f9f9;
+		min-width: 160px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		a {
+			float: none;
+			color: black;
+			padding: 12px 16px;
+			text-decoration: none;
+			display: block;
+			text-align: left;
+			&:hover 
+			{
+				background-color: #ddd;
+			}
+		}
+	}
+}
+@media all and (max-width:30em) 
+{
 	a.button1 {
 		display: block;
 		margin: 0.4em auto;
