@@ -1,6 +1,6 @@
 # Jersey Direct
-This is a interface for user at Jersey Direct sports Jersey store. Which allows each employee to login and see what stock there is, what sizes and prices.
-They can also update and edit the stock as needed.
+This is an interface for user at Jersey Direct sports Jersey store. Which allows each employee to login and see what stock there is, what sizes and prices.
+They can also update and edit the stock as needed. While the admin account has the ability to delete and remove other user from the system.
 
 ## Instructions On Setting Up
 1. Create a MySQL database called CA2-SeversideNew in PHP MyAdmin
@@ -13,6 +13,8 @@ They can also update and edit the stock as needed.
 * Admin Login = mcavoy1129
 * Admin Password = Admin123
 * You can also register and have your own account but wont be able to access the admin page without the admin Useraccount!
+
+### Additional Information
 
 
 
