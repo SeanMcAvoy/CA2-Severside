@@ -23,7 +23,7 @@ https://mysql04.comp.dkit.ie/D00233349/CRUD
 ### Additional Information
 This was a very fun and enjoyable assignment. It was my frist them every using php which I found is a lanuage I would be intrested in learning more about. 
 Feel free to login and play about with it and message me with any improvement ideas, bugs discover or general question about the project.
-*Any bugs or questions can be made to me here: D00233349@student.dkit.ie.
+* Any bugs or questions can be made to me here: D00233349@student.dkit.ie.
 
 
 
