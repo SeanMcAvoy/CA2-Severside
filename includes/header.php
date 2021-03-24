@@ -1,13 +1,30 @@
-
 <!-- the head section -->
+
 <head>
-<title>Jersey Direct</title>
-<link rel="stylesheet" type="text/css" href="css/mystyle.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<script language="JavaScript" src="../gen_validatorv31.js" type="text/javascript"></script>
+    <title>Jersey Direct</title>
+    <link rel="stylesheet" type="text/css" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script language="JavaScript" src="../gen_validatorv31.js" type="text/javascript"></script>
 </head>
 <!-- the body section -->
-<body>
-<header><h1>Jersey Direct</h1>
-</header>
 
+<body>
+    <header>
+        <h1>Jersey Direct</h1>
+        <div class="topnav" id="myTopnav">
+            <a href="index.php">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <div class="dropdown">
+                <button class="dropbtn">Your Account
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="logout.php">Logout</a>
+                    <a href="reset-password.php">Reset Password</a>
+                </div>
+            </div>
+        </div>
+
+    </header>

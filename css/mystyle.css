@@ -34,7 +34,7 @@ a.button1:hover {
   display: inline-block;
   padding: 0.35em 1.2em;
   border: 0.1em solid black;
-  margin: 0 0.3em 0.3em 0;
+  margin: 0;
   border-radius: 0.15em;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -112,7 +112,6 @@ table {
 /*Here is the header styles Start*/
 header {
   margin: 0;
-  border-bottom: 2px solid black;
 }
 
 header h1 {
@@ -129,6 +128,45 @@ nav ul {
 
 nav ul li {
   padding-bottom: 0.5em;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #32A6CD;
+  color: white;
+}
+
+.topnav a.active {
+  background-color: #32A6CD;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
 }
 
 /*Here is the body styles Start*/

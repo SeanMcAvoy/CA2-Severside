@@ -65,15 +65,7 @@ $statement3->closeCursor();
     <h2>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to Jersey Direct.</h2>
 
     
-        <div class="dropdown"> 
-            <button class="dropbtn">Your Account
-                <i class="fa fa-caret-down"></i>
-            </button>
-            <div class="dropdown-content">
-                <a href="logout.php">Logout</a>
-                <a href="reset-password.php">Reset Password</a>
-            </div>
-        </div>
+        
         <?php echo $adminButton;?>
     <h1>Product List</h1>
 
