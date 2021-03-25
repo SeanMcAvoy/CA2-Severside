@@ -2,10 +2,15 @@
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
+//Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.php");
-    exit;
+    // header("location: login.php");
+    // exit;
+}
+else if (($_SESSION["loggedin"])) {
+    $loginMessage ="<h2>Hi, <b> $_SESSION[username]</b>. Welcome to Jersey Direct.</h2>";
+    $accountButton = "";
+    
 }
 //will only print admin account if you are admin!
 if (($_SESSION["username"]) == "mcavoy1129") {
@@ -62,11 +67,8 @@ $statement3->closeCursor();
     include('includes/header.php');
     ?>
     <br>
-    <h2>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to Jersey Direct.</h2>
-
-    
-        
-        <?php echo $adminButton;?>
+    <?php echo $loginMessage;?>
+    <?php echo $adminButton;?>
     <h1>Product List</h1>
 
     <aside>

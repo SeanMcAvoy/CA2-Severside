@@ -1,4 +1,9 @@
 <?php
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.php");
+    exit;
+}
+
 require('database.php');
 $query = 'SELECT *
           FROM categories
