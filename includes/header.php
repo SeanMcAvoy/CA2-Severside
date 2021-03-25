@@ -1,5 +1,18 @@
 <!-- the head section -->
-
+<?php
+if (($_SESSION["loggedin"])) {
+    
+    $accountButton = "<div class=dropdown>
+    <button class=dropbtn>Your Account
+        <i class=fa fa-caret-down></i>
+    </button>
+    <div class=dropdown-content>
+        <a href=logout.php>Logout</a>
+        <a href=reset-password.php>Reset Password</a>
+    </div>
+</div>";   
+}
+?>
 <head>
     <title>Jersey Direct</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
@@ -16,15 +29,7 @@
             <a href="#news">News</a>
             <a href="#contact">Contact</a>
             <a href="#about">About</a>
-            <div class="dropdown">
-                <button class="dropbtn">Your Account
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="logout.php">Logout</a>
-                    <a href="reset-password.php">Reset Password</a>
-                </div>
-            </div>
+            <?php echo $accountButton?>
         </div>
 
     </header>

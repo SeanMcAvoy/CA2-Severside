@@ -9,8 +9,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 else if (($_SESSION["loggedin"])) {
     $loginMessage ="<h2>Hi, <b> $_SESSION[username]</b>. Welcome to Jersey Direct.</h2>";
-    $accountButton = "";
-    
+    $accountButton = "";   
 }
 //will only print admin account if you are admin!
 if (($_SESSION["username"]) == "mcavoy1129") {
