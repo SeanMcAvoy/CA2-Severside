@@ -119,6 +119,7 @@ $statement3->closeCursor();
                 </tr>
             <?php endforeach; ?>
         </table>
+    </section>
     <?php
     include('includes/footer.php');
     ?>
