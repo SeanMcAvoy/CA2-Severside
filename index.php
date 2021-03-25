@@ -94,8 +94,6 @@ $statement3->closeCursor();
                 <th>Name</th>
                 <th>Size</th>
                 <th>Price</th>
-                <th>Delete</th>
-                <th>Edit</th>
             </tr>
             <?php foreach ($products as $product) : ?>
                 <tr>
@@ -103,22 +101,6 @@ $statement3->closeCursor();
                     <td><?php echo $product['name']; ?></td>
                     <td><?php echo $product['size'] ?></td>
                     <td><?php echo $product['price']; ?></td>
-
-                    <td>
-                        <form action="delete_product.php" method="post" id="delete_record_form">
-                            <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
-                            <input type="hidden" name="category_id" value="<?php echo $product['categoryID']; ?>">
-                            <input type="submit" value="Delete">
-                        </form>
-                    </td>
-
-                    <td>
-                        <form action="edit_product_form.php" method="post" id="delete_record_form">
-                            <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
-                            <input type="hidden" name="category_id" value="<?php echo $product['categoryID']; ?>">
-                            <input type="submit" value="Edit">
-                        </form>
-                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>
