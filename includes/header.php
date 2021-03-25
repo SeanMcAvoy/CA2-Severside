@@ -31,7 +31,7 @@ if (($_SESSION["loggedin"])) {
             <a href="add_product_form.php">Add Product</a>
             <a href="contact.php">Contact Us</a>
             <a href="login.php">Login</a>
-            <a href="register.php">Login</a>
+            <a href="register.php">Register</a>
             <?php echo $accountButton?>
         </div>
 
