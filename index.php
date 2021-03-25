@@ -104,8 +104,6 @@ $statement3->closeCursor();
                 </tr>
             <?php endforeach; ?>
         </table>
-        <p><a class="button1" href="add_product_form.php">Add product</a></p>
-        <p><a class="button1" href="category_list.php">Manage Categories</a></p>
     </section>
     <?php
     include('includes/footer.php');
