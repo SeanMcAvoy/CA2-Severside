@@ -1,4 +1,9 @@
 <?php
+session_start();
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("location: login.php");
+    exit;
+}
 require('database.php');
 
 $product_id = filter_input(INPUT_POST, 'product_id', FILTER_VALIDATE_INT);
