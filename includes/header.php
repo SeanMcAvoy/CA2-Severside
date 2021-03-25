@@ -1,10 +1,12 @@
 <!-- the head section -->
 <?php
+// Initialize the session
+session_start();
 if (($_SESSION["loggedin"])) {
     
     $accountButton = "<div class=dropdown>
     <button class=dropbtn>Your Account
-        <i class=fa fa-caret-down></i>
+        <i class='fa fa-caret-down'></i>
     </button>
     <div class=dropdown-content>
         <a href=logout.php>Logout</a>
@@ -26,9 +28,9 @@ if (($_SESSION["loggedin"])) {
         <h1>Jersey Direct</h1>
         <div class="topnav" id="myTopnav">
             <a href="index.php">Home</a>
-            <a href="#news">News</a>
+            <a href="add_product_form.php">Add Product</a>
             <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <a href="login.php">Login</a>
             <?php echo $accountButton?>
         </div>
 
