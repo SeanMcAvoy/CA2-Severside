@@ -19,7 +19,7 @@ $statement2->closeCursor();
     <?php include('includes/header.php');?>
     <h2>Admin Page</h2>
     <aside>
-        <a class="button1" href="index.php">Return Home</a>
+        <a class="button1" href="manage-products.php">Manage Products</a>
     </aside>
     <section id="AdminPage">
         <!-- display a table of users -->
