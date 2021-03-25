@@ -29,8 +29,9 @@ if (($_SESSION["loggedin"])) {
         <div class="topnav" id="myTopnav">
             <a href="index.php">Home</a>
             <a href="add_product_form.php">Add Product</a>
-            <a href="#contact">Contact</a>
+            <a href="contact.php">Contact Us</a>
             <a href="login.php">Login</a>
+            <a href="register.php">Login</a>
             <?php echo $accountButton?>
         </div>
 
