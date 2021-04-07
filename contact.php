@@ -4,27 +4,24 @@
 <?php
 include('includes/header.php');
 ?>
-
+<div id="contactUs-form">
 <h1>Contact us</h1>
 <form method="POST" name="contactform" action="contact-form-handler.php"> 
 <p>
-<label for='name'>Your Name:</label> <br>
-<input type="text" name="name">
+<input type="text" name="name" placeholder="Full Name">
 </p>
 <p>
-<label for='email'>Email Address:</label> <br>
-<input type="text" name="email"> <br>
+<input type="text" name="email" placeholder="Email Address"> <br>
 </p>
 <p>
-<label for='phone'>Phone Number:</label> <br>
-<input type="text" name="phone"> <br>
+<input type="text" name="phone" placeholder="Phone Number"> <br>
 </p>
 <p>
-<label for='message'>Message:</label> <br>
-<textarea name="message"></textarea>
+<textarea name="message" placeholder="Message"></textarea>
 </p>
 <input type="submit" value="Submit"><br>
 </form>
+</div>
 <script language="JavaScript">
 var frmvalidator  = new Validator("contactform");
 frmvalidator.addValidation("name","req","Please provide your name"); 
