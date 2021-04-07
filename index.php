@@ -2,10 +2,14 @@
 // Initialize the session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
+//Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: login.php");
-    exit;
+    // header("location: login.php");
+    // exit;
+}
+else if (($_SESSION["loggedin"])) {
+    $loginMessage ="<h2>Hi, <b> $_SESSION[username]</b>. Welcome to Jersey Direct.</h2>";
+    $accountButton = "";   
 }
 //will only print admin account if you are admin!
 if (($_SESSION["username"]) == "mcavoy1129") {
@@ -62,11 +66,8 @@ $statement3->closeCursor();
     include('includes/header.php');
     ?>
     <br>
-    <h2>Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to Jersey Direct.</h2>
-
-    
-        
-        <?php echo $adminButton;?>
+    <?php echo $loginMessage;?>
+    <?php echo $adminButton;?>
     <h1>Product List</h1>
 
     <aside>
@@ -93,8 +94,6 @@ $statement3->closeCursor();
                 <th>Name</th>
                 <th>Size</th>
                 <th>Price</th>
-                <th>Delete</th>
-                <th>Edit</th>
             </tr>
             <?php foreach ($products as $product) : ?>
                 <tr>
@@ -102,27 +101,9 @@ $statement3->closeCursor();
                     <td><?php echo $product['name']; ?></td>
                     <td><?php echo $product['size'] ?></td>
                     <td><?php echo $product['price']; ?></td>
-
-                    <td>
-                        <form action="delete_product.php" method="post" id="delete_record_form">
-                            <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
-                            <input type="hidden" name="category_id" value="<?php echo $product['categoryID']; ?>">
-                            <input type="submit" value="Delete">
-                        </form>
-                    </td>
-
-                    <td>
-                        <form action="edit_product_form.php" method="post" id="delete_record_form">
-                            <input type="hidden" name="product_id" value="<?php echo $product['productID']; ?>">
-                            <input type="hidden" name="category_id" value="<?php echo $product['categoryID']; ?>">
-                            <input type="submit" value="Edit">
-                        </form>
-                    </td>
                 </tr>
             <?php endforeach; ?>
         </table>
-        <p><a class="button1" href="add_product_form.php">Add product</a></p>
-        <p><a class="button1" href="category_list.php">Manage Categories</a></p>
     </section>
     <?php
     include('includes/footer.php');

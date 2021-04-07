@@ -1,5 +1,28 @@
 <!-- the head section -->
+<?php
+// Initialize the session
+session_start();
+if ($_SESSION["loggedin"] !== true) 
+{
+    $loginButton = "<a href=login.php>Login</a>";
+    $registerButton = "<a href=register.php>Register</a>";
+}
+if (($_SESSION["loggedin"])) {
 
+    $accountButton = "<div class=dropdown>
+                    <button class=dropbtn>Your Account
+                    <i class='fa fa-caret-down'></i>
+                    </button>
+                    <div class=dropdown-content>
+                        <a href=logout.php>Logout</a>
+                        <a href=reset-password.php>Reset Password</a>
+                    </div>
+                    </div>";
+                    
+
+
+}
+?>
 <head>
     <title>Jersey Direct</title>
     <link rel="stylesheet" type="text/css" href="css/mystyle.css">
@@ -13,18 +36,14 @@
         <h1>Jersey Direct</h1>
         <div class="topnav" id="myTopnav">
             <a href="index.php">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-            <div class="dropdown">
-                <button class="dropbtn">Your Account
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <a href="logout.php">Logout</a>
-                    <a href="reset-password.php">Reset Password</a>
-                </div>
-            </div>
+            <a href="add_product_form.php">Add Product</a>
+            <a href="category_list.php">Manage Categories</a>
+            <a href="contact.php">Contact Us</a>
+            <?php
+            echo $loginButton;
+            echo $registerButton;
+            echo $accountButton;
+            ?>
         </div>
 
     </header>
