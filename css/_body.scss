@@ -39,6 +39,19 @@ body
         align-items: center;
         text-align: center;
     }
+    input[type=date]
+    {
+        width: 30%;
+        padding: 12px 20px;
+        margin: 10px auto;
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        align-items: center;
+        text-align: center;
+
+    }
     
    
     input[type=reset]

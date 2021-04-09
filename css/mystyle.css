@@ -214,6 +214,21 @@ body {
   text-align: center;
 }
 
+#loginForm input[type=date] {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 10px auto;
+  display: block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
 #loginForm input[type=reset] {
   background-color: #db0e0e;
   color: white;
