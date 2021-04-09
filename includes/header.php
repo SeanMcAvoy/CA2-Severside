@@ -37,6 +37,7 @@ if (($_SESSION["loggedin"])) {
         <div class="topnav" id="myTopnav">
             <a href="index.php">Home</a>
             <a href="add_product_form.php">Add Product</a>
+            <a href="manage-products.php">Mange Product</a>
             <a href="category_list.php">Manage Categories</a>
             <a href="contact.php">Contact Us</a>
             <?php
