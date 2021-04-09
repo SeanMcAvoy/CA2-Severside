@@ -4,8 +4,8 @@
 require_once "config.php";
 
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = "";
-$username_err = $password_err = $confirm_password_err = "";
+$username = $password = $confirm_password = $DOB = "";
+$username_err = $password_err = $confirm_password_err = $DOB_err = "";
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
@@ -59,20 +59,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             $confirm_password_err = "Password did not match.";
         }
     }
+    // Validate DOB
+    if(empty(trim($_POST["DOB"]))){
+        $DOB_err = "Please enter DOB.";     
+    }
+    else{
+        $DOB = ($_POST["DOB"]);
+    }
     
     // Check input errors before inserting in database
-    if(empty($username_err) && empty($password_err) && empty($confirm_password_err))
+    if(empty($username_err) && empty($password_err) && empty($confirm_password_err) && empty($DOB_err))
     {
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, DOB) VALUES (?, ?, ?)";
          
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
-            mysqli_stmt_bind_param($stmt, "ss", $param_username, $param_password);
+            mysqli_stmt_bind_param($stmt, "sss", $param_username, $param_password, $param_DOB);
             
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
+            $param_DOB = date('Y-m-d', strtotime($DOB));
             
             // Attempt to execute the prepared statement
             if(mysqli_stmt_execute($stmt)){
@@ -115,6 +123,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             <div class="form-group <?php echo (!empty($confirm_password_err)) ? 'has-error' : ''; ?>">
                 <input id="confPassid" type="password" name="confirm_password" value="<?php echo $confirm_password; ?>"placeholder="Confirm Password" onBlur="confPasswd_validation();"><span id="confPasswd_err"></span>
                 <span class="help-block"><?php echo $confirm_password_err; ?></span>
+            </div>
+            <!-- Date of Birth -->
+            <div class="form-group <?php echo (!empty($DOB_err)) ? 'has-error' : ''; ?>">
+                <input id="DOBID" type="Date" name="DOB"><span id="dob_err"></span>
+                <span class="help-block"><?php echo $DOB_err; ?></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Submit">
