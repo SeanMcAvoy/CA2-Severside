@@ -14,8 +14,8 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true)
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = "";
-$username_err = $password_err = "";
+$username = $password = $DOB = "";
+$username_err = $password_err = $DOB_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -34,12 +34,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     } else{
         $password = trim($_POST["password"]);
     }
+    // Validate DOB
+    if(empty(trim($_POST["DOB"]))){
+        $DOB_err = "Please enter DOB.";     
+    }
+    else{
+        $DOB = ($_POST["DOB"]);
+    }
     
     // Validate credentials
     if(empty($username_err) && empty($password_err))
     {
         // Prepare a select statement
-        $sql = "SELECT id, username, password FROM users WHERE username = ?";
+        $sql = "SELECT id, username, password, DOB FROM users WHERE username = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
             // Bind variables to the prepared statement as parameters
@@ -56,9 +63,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 // Check if username exists, if yes then verify password
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
                     // Bind result variables
-                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password);
-                    if(mysqli_stmt_fetch($stmt)){
-                        if(password_verify($password, $hashed_password)){
+                    mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password,$correctDOB);
+                    if(mysqli_stmt_fetch($stmt))
+                    {
+                        if(password_verify($password, $hashed_password) && $DOB == $correctDOB){
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -71,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                             header("location: index.php");
                         } else{
                             // Display an error message if password is not valid
-                            $password_err = "The password you entered was not valid.";
+                            $password_err = "The password or DOB you entered was not valid.";
                         }
                     }
                 } else{
@@ -109,6 +117,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             </div>    
             <div <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>>
                 <input  placeholder="Password" type="password" name="password">
+            </div>
+            <!-- Date of Birth -->
+            <div class="form-group <?php echo (!empty($DOB_err)) ? 'has-error' : ''; ?>">
+                <input id="DOBID" type="Date" name="DOB"><span id="dob_err"></span>
                 <span class="help-block"><?php echo $password_err; ?></span>
             </div>
             <div>
