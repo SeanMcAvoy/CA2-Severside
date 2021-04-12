@@ -28,7 +28,7 @@ $statement2->closeCursor();
             <tr>
                 <th>ID</th>
                 <th>User Name</th>
-                <th>Joined the Team</th>
+                <th>Joined</th>
                 <th>Delete User</th>
             </tr>
             <?php foreach ($users as $users) : ?>

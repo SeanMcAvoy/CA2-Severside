@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     exit;
 }
 else if (($_SESSION["loggedin"])) {
-    $loginMessage ="<h2>Hi, <b> $_SESSION[username]</b>. Welcome to Jersey Direct.</h2>";
+    //$loginMessage ="<h2>Hi, <b> $_SESSION[username]</b>. Welcome to Jersey Direct.</h2>";
     $accountButton = "";   
 }
 
@@ -73,7 +73,7 @@ $statement3->closeCursor();
         <nav>
             <ul>
                 <?php foreach ($categories as $category) : ?>
-                    <li><a class="button1" href=".?category_id=<?php echo $category['categoryID']; ?>">
+                    <li><a class="button1" href="?category_id=<?php echo $category['categoryID']; ?>">
                             <?php echo $category['categoryName']; ?>
                         </a>
                     </li>

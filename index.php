@@ -14,6 +14,11 @@ else if (($_SESSION["loggedin"])) {
 //will only print admin account if you are admin!
 if (($_SESSION["username"]) == "mcavoy1129") {
     $adminButton = "<a id=adminButton class=button1 href=admin.php >Admin Menu</a>";
+    // $deleteHeader = "<th>Delete</th>";
+    // $editHeader = "<th>Edit</th>";
+
+    
+                
 }
 
 require_once('database.php');
