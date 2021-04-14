@@ -25,7 +25,7 @@ include('includes/header.php');
 
             <label>Category:</label>
             <select id="category" name="category_id" onBlur="category_validation();">
-            <option selected="" value="Default">Please select a Category</option>
+            <option selected="" value="Default" >Please select a Category</option> 
             <?php foreach ($categories as $category) : ?>
                 <option value="<?php echo $category['categoryID']; ?>">
                     <?php echo $category['categoryName']; ?>
