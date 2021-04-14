@@ -21,5 +21,6 @@ if ($product_id != false && $category_id != false) {
 }
 
 // display the Product List page
-include('index.php');
+// include('index.php');
+include('manage-products.php');
 ?>

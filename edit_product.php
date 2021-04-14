@@ -67,6 +67,7 @@ $statement->execute();
 $statement->closeCursor();
 
 // Display the Product List page
-include('index.php');
+// include('index.php');
+include('manage-products.php');
 }
 ?>
