@@ -365,7 +365,6 @@ br {
 }
 
 #comingSoon .bgimg {
-  background-image: url("../images/under-construction.gif");
   height: 100%;
   background-position: center;
   background-size: cover;
@@ -396,7 +395,7 @@ br {
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: center;
-  color: white;
+  color: black;
 }
 
 #comingSoon hr {
