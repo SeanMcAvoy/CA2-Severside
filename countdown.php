@@ -7,7 +7,7 @@ session_start();
 <div id="comingSoon">
 <div class="bgimg">
 <div class="topleft">
-<p>Exciting things coming to the site keep an eye on this page!</p>
+<p>We are working on something Awesome. Stay Tuned!</p>
   </div>
   <div class="middle">
     <h1>COMING SOON</h1>
@@ -19,7 +19,9 @@ session_start();
   </div>
 </div>
 </div>
-</div>  
+</div> 
+
+
 <script>
 // Set the date we're counting down to
 var countDownDate = new Date("May 5, 2021 09:30:00").getTime();

@@ -40,6 +40,7 @@ if (($_SESSION["loggedin"])) {
             <a href="manage-products.php">Mange Product</a>
             <a href="category_list.php">Manage Categories</a>
             <a href="contact.php">Contact Us</a>
+            <a href="countdown.php">Coming Soon</a>
             <?php
             echo $loginButton;
             echo $registerButton;
