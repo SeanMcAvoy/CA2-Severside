@@ -175,3 +175,83 @@ br {
     top: 25%;
     left: 25%;
 }
+#comingSoon
+{
+    height: 100%;
+    margin: 0;
+    margin-top: 1%;
+    border: black 1px solid;
+    .bgimg {
+        background-image: url('/w3images/forestbridge.jpg');
+        height: 100%;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        color: white;
+        font-family: "Courier New", Courier, monospace;
+        font-size: 25px;
+      }
+      
+      .topleft {
+        position: absolute;
+        top: 0;
+        left: 16px;
+        color: black;
+      }
+      
+      .bottomleft {
+        position: absolute;
+        bottom: 0;
+        left: 16px;
+        color: black;
+      }
+      
+      .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: black;
+      }
+      
+      hr {
+        margin: auto;
+        width: 40%;
+      }
+}
+.bgimg {
+    background-image: url('/w3images/forestbridge.jpg');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 25px;
+  }
+  
+  .topleft {
+    position: absolute;
+    top: 0;
+    left: 16px;
+  }
+  
+  .bottomleft {
+    position: absolute;
+    bottom: 0;
+    left: 16px;
+  }
+  
+  .middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  hr {
+    margin: auto;
+    width: 40%;
+  }
