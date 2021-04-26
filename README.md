@@ -18,7 +18,7 @@ They can also update and edit the stock as needed. While the admin account has t
 
 ### Live site
 * My Website interface can be seen here live from a server: 
-https://mysql04.comp.dkit.ie/D00233349/CRUD
+https://mysql04.comp.dkit.ie/D00233349/Final-CRUD
 
 ### Additional Information
 This was a very fun and enjoyable assignment. It was my frist them every using php which I found is a lanuage I would be intrested in learning more about. 
